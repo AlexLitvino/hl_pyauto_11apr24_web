@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+from web_tests.helpers.project_helpers import get_base_url
 from web_tests.pages.base_page import BasePage
 from web_tests.pages.inventory_page import InventoryPage
 
@@ -41,7 +42,7 @@ class LoginPage(BasePage):
         return self.get_element(LoginPage.PASSWORD_ERROR_MARKER)
 
     def navigate(self):
-        self.driver.get('https://www.saucedemo.com/')
+        self.driver.get(get_base_url())
         return self
 
     def is_displayed(self):
