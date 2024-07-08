@@ -52,7 +52,6 @@ def pytest_runtest_makereport(item, call):  # pylint: disable=unused-argument
     # execute all other hooks to obtain the report object
     outcome = yield
     rep = outcome.get_result()
-    import pdb; pdb.set_trace()
     # we only look at actual failing test calls, not setup/teardown
     if rep.when == "call" and rep.failed:
         driver = item.funcargs["login_page"].driver
